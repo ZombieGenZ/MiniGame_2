@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Comfortaa:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #6DD5FA, #FF758C);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    width: 90%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 1fr 40%;
+    gap: 30px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+}
+
+.main-left, .main-right-bottom {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.main-left {
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.main-left-top, .main-right-top {
+    background-color: #2196F3;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.main-left-bottom {
+    padding: 30px;
+    overflow-y: auto;
+    max-height: 70vh;
+}
+
+.main-right {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+}
+
+.main-right-top {
+    background-color: #2196F3;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.main-right-top h1 {
+    font-size: 23px;
+    color: white;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.main-right-bottom {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background-image: url('https://example.com/travel-background.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.main-right-bottom::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.85);
+    z-index: 0;
+}
+
+.main-right-bottom > * {
+    position: relative;
+    z-index: 1;
+}
+
+#title {
+    font-size: 32px;
+    color: white;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#question {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+#answer-input {
+    width: 80%;
+    max-width: 300px;
+    height: 50px;
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 15px 0;
+    border-radius: 25px;
+    border: 2px solid #2196F3;
+    outline: none;
+    transition: 0.3s;
+    font-family: 'Poppins', sans-serif;
+}
+
+#answer-input:focus {
+    border-color: #1E88E5;
+    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.3);
+}
+
+#submit {
+    width: 80%;
+    max-width: 200px;
+    height: 50px;
+    font-size: 18px;
+    border: none;
+    background-color: #2196F3;
+    color: white;
+    font-weight: bold;
+    border-radius: 25px;
+    text-transform: uppercase;
+    transition: 0.3s;
+    cursor: pointer;
+    margin: 20px 0;
+    font-family: 'Comfortaa', cursive;
+}
+
+#submit:hover {
+    background-color: #1E88E5;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+#result, #score, #question-number, #timer {
+    margin: 10px 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#score, #question-number {
+    color: #2196F3;
+}
+
+#timer {
+    color: #FF5722;
+}
+
+.Exactly {
+    color: #4CAF50;
+}
+
+.incorrect {
+    color: #f44336;
+}
+
+.end-h1 {
+    font-size: 40px;
+    color: #2196F3; /* Bright blue color */
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.end-btn {
+    width: 80%;
+    max-width: 250px;
+    height: 60px;
+    font-size: 20px;
+}
+
+h1 {
+    font-family: 'Comfortaa', cursive;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: 700;
+}
+
+.ready {
+    width: 60%;
+    height: 60px;
+    font-size: 24px;
+    border: none;
+    background-color: #2196F3;
+    color: white;
+    font-weight: bold;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: 0.3s;
+    cursor: pointer;
+    margin: 20px 0;
+    font-family: 'Comfortaa', cursive;
+}
+
+.ready:hover {
+    background-color: #1E88E5;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.pin, #answer-input {
+    width: 60%;
+    height: 50px;
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 15px 0;
+    border-radius: 25px;
+    border: 2px solid #2196F3;
+    outline: none;
+    transition: 0.3s;
+    font-family: 'Poppins', sans-serif;
+}
+
+.pin:focus, #answer-input:focus {
+    border-color: #1E88E5;
+    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.3);
+}
+
+#question, #result, #score, #question-number, #timer {
+    margin: 15px 0;
+    font-size: 18px;
+}
+
+#question {
+    font-weight: 600;
+    color: #333;
+}
+
+#score, #question-number {
+    color: #2196F3;
+    font-weight: 600;
+}
+
+#timer {
+    color: #FF5722;
+    font-weight: 600;
+}
+
+.Exactly {
+    color: #4CAF50;
+    font-weight: 600;
+}
+
+.incorrect {
+    color: #f44336;
+    font-weight: 600;
+}
+
+.fa-circle-check {
+    color: #4CAF50;
+}
+
+.fa-circle-xmark {
+    color: #f44336;
+}
+
+@media (max-width: 768px) {
+    .main {
+        grid-template-columns: 1fr;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutLeft {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+.slide-in {
+    animation: slideInRight 0.5s forwards;
+}
+
+.slide-out {
+    animation: slideOutLeft 0.5s forwards;
+}
+
+#countdown {
+    font-size: 80px;
+    font-weight: bold;
+    color: rgb(255, 106, 0);
+}
+
+.start-text {
+    font-size: 35px !important;
+    font-weight: bold;
+    color: red !important;
+    text-shadow: 0 0 20px gray;
+}
+.center {
+    text-align: center;
+}
+
+.fade-out {
+    animation: fadeOut 1s ease-in-out forwards;
+    opacity: 1;
+}
+
+@keyframes fadeOut {
+    0% {
+      opacity: 1;
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1.5);
+    }
+  }
