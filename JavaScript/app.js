@@ -195,7 +195,7 @@ function checkAnswer(btn) {
             timeLeft += 20;
             setTimeout(newQuestion, 2000);
         } else {
-            LOG.push(`<h2><i class="fa-solid fa-circle-xmark"></i> ${Number(input.dataset.vnd).toLocaleString()} VNĐ = ${Number(userAnswer).toLocaleString()} ${input.dataset.country} => <i class="fa-solid fa-circle-check"></i> ${Number(input.dataset.vnd).toLocaleString()} VNĐ = ${correctAnswer.toLocaleString()} ${input.dataset.country}</h2>`);
+            // LOG.push(`<h2><i class="fa-solid fa-circle-xmark"></i> ${Number(input.dataset.vnd).toLocaleString()} VNĐ = ${Number(userAnswer).toLocaleString()} ${input.dataset.country} => <i class="fa-solid fa-circle-check"></i> ${Number(input.dataset.vnd).toLocaleString()} VNĐ = ${correctAnswer.toLocaleString()} ${input.dataset.country}</h2>`);
             Swal.fire({
                 title: "Kết thúc",
                 text: `Sai. Đáp án đúng là ${correctAnswer.toLocaleString()} ${currentCurrency}`,
