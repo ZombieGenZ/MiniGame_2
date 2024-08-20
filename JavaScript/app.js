@@ -176,6 +176,7 @@ function checkAnswer(btn) {
     
         const input = btn.previousElementSibling;
         if (Math.abs(userAnswer - correctAnswer) <= tolerance) {
+            score++;
             // LOG.push(`<h2><i class="fa-solid fa-circle-check"></i> ${Number(input.dataset.vnd).toLocaleString()} VNĐ = ${correctAnswer.toLocaleString()} ${input.dataset.country}</h2>`);   
             if (score >= 1 && score <= 3) {
                 LOG.push(`<h2> ${score} <i class="fa-solid fa-circle-check"></i> Bạn nhận được 1 giftcode <img src="Image/Tier/i_rare.png" alt=""><img src="Image/Tier/rare.png" alt=""> </h2>`);   
@@ -183,16 +184,13 @@ function checkAnswer(btn) {
             else if (score >= 4 && score <= 5) {
                 LOG.push(`<h2> ${score} <i class="fa-solid fa-circle-check"></i> Bạn nhận được 1 giftcode <img src="Image/Tier/i_epic.png" alt=""><img src="Image/Tier/epic.png" alt=""> </h2>`);   
             }
-            else if (score >= 6 && score <= 8) {
+            else if (score >= 6 && score <= 10) {
                 LOG.push(`<h2> ${score} <i class="fa-solid fa-circle-check"></i> Bạn nhận được 1 giftcode <img src="Image/Tier/i_legendary.png" alt=""><img src="Image/Tier/legendary.png" alt=""> </h2>`);   
             }
-            else if (score > 8) {
-                LOG.push(`<h2> ${score} <i class="fa-solid fa-circle-check"></i> Bạn nhận được <img src="Image/Tier/i_mythic.png" alt=""><img src="Image/Tier/boss.png" alt=""> FULL MENU </h2>`);   
-            }
-            score++;
             document.getElementById('result').classList.add("Exactly");
             document.getElementById('result').textContent = 'Chính xác!';
-            timeLeft += 20;
+            timeLeft += 15;
+            console.log(score);
             setTimeout(newQuestion, 2000);
         } else {
             // LOG.push(`<h2><i class="fa-solid fa-circle-xmark"></i> ${Number(input.dataset.vnd).toLocaleString()} VNĐ = ${Number(userAnswer).toLocaleString()} ${input.dataset.country} => <i class="fa-solid fa-circle-check"></i> ${Number(input.dataset.vnd).toLocaleString()} VNĐ = ${correctAnswer.toLocaleString()} ${input.dataset.country}</h2>`);
